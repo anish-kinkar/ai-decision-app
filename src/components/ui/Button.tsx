@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Button.module.css';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'danger';
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'outline' | 'danger' | 'ghost';
+  size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;
   isLoading?: boolean;
 }
@@ -10,6 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({ 
   children, 
   variant = 'primary', 
+  size = 'medium',
   fullWidth = false, 
   isLoading = false,
   className = '',
@@ -19,6 +21,7 @@ export function Button({
   const btnClass = `
     ${styles.button} 
     ${styles[variant]} 
+    ${styles[size]}
     ${fullWidth ? styles.fullWidth : ''} 
     ${disabled || isLoading ? styles.disabled : ''}
     ${className}

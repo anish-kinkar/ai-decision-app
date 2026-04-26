@@ -3,12 +3,29 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.875rem;
   transition: all 0.2s ease;
   user-select: none;
+}
+
+.small {
+  height: 2rem;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+}
+
+.medium {
+  height: 2.5rem;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+}
+
+.large {
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
 }
 
 .primary {
@@ -48,6 +65,15 @@
 
 .danger:hover:not(:disabled) {
   background-color: #dc2626;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--foreground);
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--overlay-05);
 }
 
 .disabled {

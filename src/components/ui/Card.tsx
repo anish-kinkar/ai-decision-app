@@ -6,12 +6,13 @@ interface CardProps {
   description?: string;
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   hoverable?: boolean;
 }
 
-export function Card({ title, description, children, className = '', hoverable = false }: CardProps) {
+export function Card({ title, description, children, className = '', style, hoverable = false }: CardProps) {
   return (
-    <div className={`${styles.card} ${hoverable ? styles.hoverable : ''} ${className}`}>
+    <div className={`${styles.card} ${hoverable ? styles.hoverable : ''} ${className}`} style={style}>
       {(title || description) && (
         <div style={{ marginBottom: '1rem' }}>
           {title && <h3 className={styles.title}>{title}</h3>}

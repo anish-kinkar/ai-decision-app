@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Input.module.css';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
   helperText?: string;
   multiline?: boolean;
-}
+};
 
 export function Input({ label, helperText, multiline, id, className = '', ...props }: InputProps) {
   return (

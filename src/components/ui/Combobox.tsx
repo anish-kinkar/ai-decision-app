@@ -8,7 +8,7 @@ export interface ComboboxOption {
   category?: string;
 }
 
-interface ComboboxProps {
+export type ComboboxProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   id?: string;
   label?: string;
   options: ComboboxOption[];
@@ -16,9 +16,9 @@ interface ComboboxProps {
   onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
-}
+};
 
-export function Combobox({ id, label, options, value, onChange, placeholder = "Select an option...", className = '' }: ComboboxProps) {
+export function Combobox({ id, label, options, value, onChange, placeholder = "Select an option...", className = '', ...props }: ComboboxProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,7 @@ export function Combobox({ id, label, options, value, onChange, placeholder = "S
   };
 
   return (
-    <div className={`${styles.wrapper} ${className}`} ref={wrapperRef}>
+    <div className={`${styles.wrapper} ${className}`} ref={wrapperRef} {...props}>
       {label && <label htmlFor={id} className={styles.label}>{label}</label>}
       
       <button

@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Input.module.css';
 
-interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string;
   options: { value: string; label: string }[];
-}
+};
 
 export function Select({ label, id, options, className = '', ...props }: SelectProps) {
   return (

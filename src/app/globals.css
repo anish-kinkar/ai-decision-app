@@ -1,8 +1,10 @@
 :root {
+  /* Default Dark Mode */
   --background: #0f1115;
   --foreground: #f8fafc;
   --card: #181b21;
   --card-border: #2e3440;
+  
   --primary: #6366f1;
   --primary-hover: #4f46e5;
   --success: #10b981;
@@ -10,6 +12,32 @@
   --danger: #ef4444;
   --muted: #64748b;
   --accent: #8b5cf6;
+
+  /* Overlays used across components */
+  --overlay-02: rgba(255, 255, 255, 0.02);
+  --overlay-05: rgba(255, 255, 255, 0.05);
+  --overlay-10: rgba(255, 255, 255, 0.1);
+  --overlay-15: rgba(255, 255, 255, 0.15);
+  --overlay-20: rgba(255, 255, 255, 0.2);
+  --overlay-strong: rgba(15, 17, 21, 0.8);
+}
+
+.light-mode {
+  /* Light Mode Overrides */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #f8fafc;
+  --card-border: #e2e8f0;
+  
+  --muted: #64748b;
+  
+  /* Overlays inverted for Light Mode */
+  --overlay-02: rgba(0, 0, 0, 0.02);
+  --overlay-05: rgba(0, 0, 0, 0.05);
+  --overlay-10: rgba(0, 0, 0, 0.08);
+  --overlay-15: rgba(0, 0, 0, 0.12);
+  --overlay-20: rgba(0, 0, 0, 0.15);
+  --overlay-strong: rgba(255, 255, 255, 0.9);
 }
 
 * {

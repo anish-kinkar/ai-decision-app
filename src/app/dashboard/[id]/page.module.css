@@ -109,3 +109,129 @@
   font-size: 0.75rem;
   font-weight: 700;
 }
+
+/* New CSS for Business Impact Section */
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.impactCard {
+  background: var(--background);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.impactCard h4 {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.impactValues {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.valBefore {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.valAfter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+.impactChange {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.changePositive {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.changeNegative {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+.changeNeutral {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--muted);
+}
+
+.explanationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.explanationBox {
+  background: rgba(255,255,255,0.02);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
+.explanationBox.improves { border-left-color: var(--success); }
+.explanationBox.worsens { border-left-color: var(--danger); }
+
+.scenarioCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.scenarioCard {
+  background: var(--background);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.scenarioCard h4 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.5rem;
+}
+
+.scenarioMetric {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.scenarioMetric span:first-child { color: var(--muted); }
+.scenarioMetric span:last-child { font-weight: bold; }
+
+.scenarioCause {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .scenarioCards { grid-template-columns: 1fr; }
+  .explanationGrid { grid-template-columns: 1fr; }
+}

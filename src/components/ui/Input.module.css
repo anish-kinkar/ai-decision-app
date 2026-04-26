@@ -14,7 +14,7 @@
 .input {
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--overlay-05);
   border: 1px solid var(--card-border);
   border-radius: 8px;
   color: var(--foreground);
@@ -30,4 +30,17 @@
 
 .input::placeholder {
   color: var(--muted);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: -0.25rem;
 }

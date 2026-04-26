@@ -3,11 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BrainCircuit, LayoutDashboard, Calculator, History, BookOpen } from 'lucide-react';
+import { BrainCircuit, LayoutDashboard, Calculator, History, BookOpen, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/components/ThemeProvider';
 import styles from './Sidebar.module.css';
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   const links = [
     { href: '/', label: 'Overview', icon: LayoutDashboard },
@@ -41,7 +43,19 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className={styles.footer}>
+      <div className={styles.footer} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <button 
+          onClick={toggleTheme} 
+          style={{ 
+            display: 'flex', alignItems: 'center', gap: '0.5rem', 
+            color: 'var(--muted)', background: 'var(--overlay-05)', 
+            padding: '0.5rem 0.75rem', borderRadius: '8px',
+            fontSize: '0.875rem', fontWeight: 500
+          }}
+        >
+          {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </button>
         <p>AI Decision Simulator v1.0</p>
       </div>
     </aside>
